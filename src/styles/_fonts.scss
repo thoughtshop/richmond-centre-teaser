@@ -1,0 +1,64 @@
+@font-face {
+  font-family:'Electra LH Display';
+  src: url('./fonts/ElectraLH-Display.eot');
+  src: url('./fonts/ElectraLH-Display.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/ElectraLH-Display.woff2') format('woff2'),
+    url('./fonts/ElectraLH-Display.woff') format('woff'),
+    url('./fonts/ElectraLH-Display.svg#ElectraLH-Display') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+  font-family:'Electra LH Bold';
+  src: url('./fonts/ElectraLH-Bold.eot');
+  src: url('./fonts/ElectraLH-Bold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/ElectraLH-Bold.woff2') format('woff2'),
+    url('./fonts/ElectraLH-Bold.woff') format('woff'),
+    url('./fonts/ElectraLH-Bold.svg#ElectraLH-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+  font-family:'Electra LH Cursive';
+  src: url('./fonts/ElectraLH-Cursive.eot');
+  src: url('./fonts/ElectraLH-Cursive.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/ElectraLH-Cursive.woff2') format('woff2'),
+    url('./fonts/ElectraLH-Cursive.woff') format('woff'),
+    url('./fonts/ElectraLH-Cursive.svg#ElectraLH-Cursive') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0-10FFFF;
+}
+
+@font-face {
+  font-family:'Proxima Nova Semibold';
+  src: url('./fonts/ProximaNova-Semibold.eot');
+  src: url('./fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/ProximaNova-Semibold.woff2') format('woff2'),
+    url('./fonts/ProximaNova-Semibold.woff') format('woff'),
+    url('./fonts/ProximaNova-Semibold.svg#Proxima Nova Semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}
+
+@font-face {
+  font-family:'Proxima Nova Light';
+  src: url('./fonts/ProximaNova-Light.eot');
+  src: url('./fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'),
+    url('./fonts/ProximaNova-Light.woff2') format('woff2'),
+    url('./fonts/ProximaNova-Light.woff') format('woff'),
+    url('./fonts/ProximaNova-Light.svg#Proxima Nova Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  unicode-range: U+0020-00FE;
+}

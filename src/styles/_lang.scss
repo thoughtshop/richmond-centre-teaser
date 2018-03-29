@@ -1,0 +1,16 @@
+$font-family-chinese: Tahoma, Arial, Helvetica, "Microsoft YaHei New", "Microsoft Yahei", 微软雅黑, 宋体, SimSun, STXihei, 华文细黑, sans-serif;
+$font-family-chinese-serif: 'Electra LH Bold', Tahoma, Arial, Helvetica, "Songti TC", 宋体, SimSun, 华文细黑, STXihei, sans-serif;
+
+.zht {
+  font-family: $font-family-sans;
+
+  h2, h3, h4, h5 {
+    font-family: $font-family-chinese-serif;
+  }
+
+  .eight-points {
+    p {
+      font-family: $font-family-sans;
+    }
+  }
+}

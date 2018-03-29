@@ -1,0 +1,22 @@
+{
+  "bootstrapVersion": "4",
+
+  "styleLoaders": ["style-loader", "css-loader", "sass-loader"],
+
+  "styles": false,
+
+  "scripts": {
+    "affix": false,
+    "alert": false,
+    "button": false,
+    "carousel": false,
+    "collapse": false,
+    "dropdown": false,
+    "modal": false,
+    "popover": true,
+    "scrollspy": false,
+    "tab": false,
+    "tooltip": true,
+    "transition": false
+  }
+}
