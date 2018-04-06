@@ -24,7 +24,7 @@
     %meta{property: "og:description", content: ""}
 
     %link{rel: "stylesheet", media: "all", href: "./assets/app.css"}
-    
+
     // Google Tag Manager
     :javascript
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -39,7 +39,7 @@
     %noscript
       %iframe{src: "https://www.googletagmanager.com/ns.html?id=GTM-54CTVPT", height: "0", width: "0", style: "display:none;visibility:hidden"}
     // End Google Tag Manager (noscript)
-    
+
     %header
       .container
         .d-flex.justify-content-end
@@ -57,7 +57,7 @@
               %img.image-responsive{src: "./assets/images/live-at-richmond-centre.svg", alt: "Live at Richmond Centre image"}
 
         %hr
-        
+
         .row
           .col
             %h3.divider-after
@@ -137,13 +137,13 @@
           .columns
             %p Richmond is a point of pride in Metro Vancouver. A coastal city with outdoor beauty, diverse communities and a thriving metropolitan scene. One that’s closely linked to Vancouver by the SkyTrain and connected to the world by YVR. Its culture and history give it charm, while its continued growth, restaurants and international influence create an unmistakable&nbsp;energy.
             %p At Richmond’s heart, CF Richmond Centre will transform from a world class shopping centre into a world class master planned destination. There will be something for everyone; boutique street front shopping districts that complement international brands. Tranquil public open spaces nestled amongst the lively streets and open plazas. And more than 2,000 homes throughout, offering lifestyles as diverse as the neighbourhoods they’re found in. Today, Minoru Park, City Hall, SkyTrain’s Canada Line and the existing shopping centre make this area the cultural heart of the city and one of the most significant locations in Metro Vancouver. When complete, it will celebrate the character of Richmond among the features that define the world’s best&nbsp;cities.
-      
+
       %hr
-      
-      %h4 
+
+      %h4
         %em The Eight Ways
         CF Richmond Centre Will Create Value For Its&nbsp;Residents:
-      
+
       .row.eight-points
         .col-6.col-md-3
           %h5.divider-after
@@ -232,28 +232,29 @@
 
           .col-sm-6.form-group
             %input.form-control{type: "text", placeholder: "Last Name", name: "contact[last_name]", required: true}
-        
+
         .row
           .col-sm-6.form-group
             %input.form-control{type: "text", placeholder: "Email", name: "contact[email]", required: true}
 
           .col-sm-6.form-group
             %input.form-control.input-phone{type: "text", placeholder: "Phone", name: "contact[phone]"}
-        
+
         .row
           .col-sm-6.form-group
             %input.form-control.input-postal{type: "text", placeholder: "Postal Code", name: "contact[postcode]", required: true}
 
           .col-sm-6.form-group
             %select.form-control{name: "answers[4387][answers]"}
+              %option{value: ""} How did you hear about us?
               %option{value: "Online Search"} Online Search
               %option{value: "Realtor"} Realtor
-              %option{value: "Singage/Walk by/Drive by"} Singage/Walk by/Drive by
+              %option{value: "Signage/Walk by/Drive by"} Signage/Walk by/Drive by
               %option{value: "Email Outreach"} Email Outreach
               %option{value: "Community Newspaper"} Community Newspaper
               %option{value: "Chinese Newspaper"} Chinese Newspaper
               %option{value: "Friends and Family"} Friends and Family
-        
+
         .row
           .col-sm-6.form-group
             %p Are you a realtor?
@@ -272,14 +273,14 @@
             .form-check.form-check-inline
               %input.form-check-input{type: "radio", name: "answers[4389][answers]", id: "answers_4389_no", value: "No"}
               %label.form-check-label{for: "answers_4389_no"} No
-        
+
         .form-group
           .form-check.form-check-inline.consent
             %input.form-check-input{type: "radio", name: "answers[4388][answers]", id: "answers_4388", value: "Yes", required: true}
             %label.form-check-label{for: "answers_4388"}
-              %em 
-                YES, please keep me on your list. I would like to receive VIP Early Access for communities marketed by Shape Properties Corp. 
-                I may withdraw my consent at anytime by email to 
+              %em
+                YES, please keep me on your list. I would like to receive VIP Early Access for communities marketed by Shape Properties Corp.
+                I may withdraw my consent at anytime by email to
                 %a{href:"mailto:info@shapeproperties.com"}info@shapeproperties.com
                 or by post to 2020 One Bentall Centre, 505 Burrard Street, Box 206, Vancouver BC V7X&nbsp;1M6.
 
@@ -301,10 +302,10 @@
           .col-12.col-md-6.order-md-1.col-lg-8.order-lg-1
             %ul.list-inline
               %li.list-inline-item
-                T: 
+                T:
                 %a{href: "tel:+1.604.788.6608"} 604.788.6608
               %li.list-inline-item
-                E: 
+                E:
                 %a{href: "mailto:info@liveatcfrc.com"} info@liveatcfrc.com
             %p.disclaimer This is not an offering for sale as such an offer can only be made when accompanied by a disclosure statement. E.&nbsp;&amp;&nbsp;O.E.
 

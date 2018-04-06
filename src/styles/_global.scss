@@ -110,7 +110,7 @@ body {
       -webkit-background-clip: unset;
       -webkit-text-fill-color: unset;
       @include gradient-x($bronze-light, $bronze-dark);
-      
+
       color: $white;
 
       &:hover {
@@ -269,10 +269,14 @@ body {
 
 #spark-registration-form {
   font-family: $font-family-sans;
-  
 
   .consent {
     align-items: flex-start;
+    width: 100%;
+
+    input {
+      width: 128px;
+    }
 
     .form-check-label {
       max-width: 100%;
@@ -292,7 +296,7 @@ body {
 .thank-you {
   padding-top: 50px;
   padding-bottom: 50px;
-  
+
   h2 {
     max-width: 100%;
   }
@@ -458,6 +462,14 @@ footer {
       min-height: 100vh;
     }
   }
+
+  #spark-registration-form {
+    .consent {
+      input {
+        width: 26px;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-up(lg) {
@@ -474,7 +486,7 @@ footer {
   h2 {
     font-size: 3.5rem;
   }
-  
+
   h3 {
     font-size: 2.4rem;
   }
