@@ -121,24 +121,11 @@ body {
 }
 
 .carousel {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 
-  .slick-arrow {
+  .flickity-prev-next-button {
     display: none !important;
-    z-index: 1000;
-
-    &::before {
-      font-size: 35px;
-      text-shadow: 0 0 6px rgba(0,0,0,0.5);
-    }
-  }
-
-  .slick-next {
-    right: 35px;
-  }
-
-  .slick-prev {
-    left: 20px;
+    
   }
 
   .slick-dots {
@@ -451,9 +438,10 @@ footer {
   }
 
   .carousel {
-    .slick-arrow {
+    .flickity-prev-next-button {
       display: block !important;
     }
+
     .callouts {
       .callout-9 {
         left: 89%;

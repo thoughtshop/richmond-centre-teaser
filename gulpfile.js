@@ -33,7 +33,7 @@ gulp.task('sass', function() {
     includePaths: [
       './node_modules/bootstrap/scss',
       './node_modules/font-awesome/scss',
-      './node_modules/slick-carousel/slick'
+      './node_modules/flickity/css'
     ]
   }
 

@@ -50,16 +50,9 @@ $(function() {
     $("#spark-registration-form").attr("action", formUrl);
   }
 
-  $('.carousel').slick({
-    arrows: true,
-    dots: true,
-    infinite: false,
+  let flickity = new Flickity('.carousel', {
+    autoPlay: false,
+    pageDots: true,
+    wrapAround: true
   });
-
-  // let flickity = new Flickity('.carousel', {
-  //   autoPlay: false,
-  //   draggable: false,
-  //   pageDots: false,
-  //   wrapAround: true
-  // });
 });
