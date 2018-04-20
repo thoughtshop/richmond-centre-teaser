@@ -55,13 +55,22 @@ gulp.task('sass', function() {
 });
 
 gulp.task('haml', function() {
-  gulp.src('./src/haml/*.haml')
+  gulp.src(['./src/haml/*.haml'])
     .pipe(cache('haml'))
     .pipe(haml())
     .on("error", notify.onError(function (error) {
       return "Error: " + error.message;
     }))
     .pipe(gulp.dest(config.dest))
+    .pipe(connect.reload());
+
+  gulp.src(['./src/haml/zh/*.haml'])
+    .pipe(cache('haml'))
+    .pipe(haml())
+    .on("error", notify.onError(function (error) {
+      return "Error: " + error.message;
+    }))
+    .pipe(gulp.dest(config.dest + '/zh'))
     .pipe(connect.reload());
 });
 
@@ -89,7 +98,7 @@ gulp.task('connect', function() {
 
 gulp.task('watch', ['connect', 'build'], function() {
   gulp.watch(['./src/styles/*', './src/styles/**/*'], ['sass']);
-  gulp.watch('./src/haml/*', ['haml']);
+  gulp.watch(['./src/haml/*', './src/haml/zh/*' ], ['haml']);
   gulp.watch('./src/scripts/*', ['webpack']);
 });
 
