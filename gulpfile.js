@@ -1,17 +1,15 @@
 var gulp    = require('gulp'),
-    ifElse = require('gulp-if-else'),
     util   = require('gulp-util'),
     webpack = require('webpack'),
-    gulpWebpack = require('gulp-webpack'),
     webpackStream = require('webpack-stream'),
-    haml    = require('gulp-ruby-haml'),
+    gulpWebpack = require('gulp-webpack'),
     sass    = require('gulp-sass'),
     path    = require('path'),
-    refresh = require('gulp-livereload'),
     connect = require('gulp-connect'),
-    cache   = require('gulp-cached'),
     notify  = require('gulp-notify'),
-    autoprefixer = require('gulp-autoprefixer');
+    autoprefixer = require('autoprefixer'),
+    fileinclude = require('gulp-file-include'),
+    postcss = require('gulp-postcss');
 
 var config = {
   dest: util.env.production ? './dist' : './build',
@@ -28,8 +26,8 @@ gulp.task('webpack', () => {
     .pipe(connect.reload());
 });
 
-gulp.task('sass', function() {
-  let options = {
+gulp.task('sass', () => {
+  let sassOptions = {
     includePaths: [
       './node_modules/bootstrap/scss',
       './node_modules/font-awesome/scss',
@@ -38,43 +36,43 @@ gulp.task('sass', function() {
   }
 
   if (config.production) {
-    options.outputStyle = "compressed";
+    sassOptions.outputStyle = "compressed";
   }
 
-  gulp.src(['./src/styles/app.scss'])
-    .pipe(sass(options))
-    .on("error", notify.onError(function (error) {
+  let plugins = [
+    autoprefixer({browsers: ['last 2 versions'], cascade: false})
+  ];
+
+  gulp.src('./src/styles/app.scss')
+    .pipe(sass(sassOptions))
+    .on("error", notify.onError(error => {
       return "Error: " + error.message;
     }))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
+    .pipe(postcss(plugins))
+    .on("error", notify.onError(error => {
+      return "Error: " + error.message;
     }))
     .pipe(gulp.dest(config.dest + '/assets'))
     .pipe(connect.reload());
 });
 
-gulp.task('haml', function() {
-  gulp.src(['./src/haml/*.haml'])
-    .pipe(cache('haml'))
-    .pipe(haml())
-    .on("error", notify.onError(function (error) {
+gulp.task('html', [], () => {
+  gulp.src(['./src/*.html'])
+    .pipe(fileinclude({
+      basepath: './src/html_partials',
+      context: {
+        robots: true
+      },
+      indent: true
+    }))
+    .on("error", notify.onError(error => {
       return "Error: " + error.message;
     }))
     .pipe(gulp.dest(config.dest))
-    .pipe(connect.reload());
+    .pipe(connect.reload())
+})
 
-  gulp.src(['./src/haml/zh/*.haml'])
-    .pipe(cache('haml'))
-    .pipe(haml())
-    .on("error", notify.onError(function (error) {
-      return "Error: " + error.message;
-    }))
-    .pipe(gulp.dest(config.dest + '/zh'))
-    .pipe(connect.reload());
-});
-
-gulp.task('copy-assets', function() {
+gulp.task('copy-assets', () => {
   gulp.src('./node_modules/font-awesome/fonts/*.{ttf,woff,woff2,eof,svg}')
     .pipe(gulp.dest(config.dest + '/assets/fonts'));
 
@@ -88,7 +86,7 @@ gulp.task('copy-assets', function() {
     .pipe(gulp.dest(config.dest + '/assets/images'));
 });
 
-gulp.task('connect', function() {
+gulp.task('connect', () => {
   connect.server({
     port: 3000,
     root: config.dest,
@@ -96,12 +94,13 @@ gulp.task('connect', function() {
   });
 });
 
-gulp.task('watch', ['connect', 'build'], function() {
+gulp.task('watch', ['connect', 'build'], () => {
   gulp.watch(['./src/styles/*', './src/styles/**/*'], ['sass']);
-  gulp.watch(['./src/haml/*', './src/haml/zh/*' ], ['haml']);
-  gulp.watch('./src/scripts/*', ['webpack']);
+  gulp.watch(['./src/html_partials/*', './src/*.html'], ['html']);
+  gulp.watch(['./src/scripts/*'], ['webpack']);
+  gulp.watch(['./src/images/*'], ['copy-assets']);
 });
 
-gulp.task('build', ['copy-assets', 'webpack', 'haml', 'sass']);
+gulp.task('build', ['html', 'copy-assets', 'webpack', 'sass']);
 
 gulp.task('default', ['build']);

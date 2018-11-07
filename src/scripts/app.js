@@ -1,6 +1,3 @@
-import Flickity from 'flickity';
-import 'slick-carousel';
-
 import Cleave from 'cleave.js';
 import 'cleave.js/dist/addons/cleave-phone.ca';
 
@@ -15,10 +12,18 @@ var cleavePostal = new Cleave('.input-postal', {
   uppercase: true
 });
 
+var cleaveDate = new Cleave('.input-date', {
+  date: true,
+  datePattern: ['Y', 'm', 'd']
+});
+
 $('.callout').popover({
   trigger: 'hover',
-
 });
+
+$.validator.addMethod("valueMustEqual", function(value, element, arg){
+  return arg == value;
+}, "Value must equal arg.");
 
 $('#spark-registration-form').validate({
   rules: {
@@ -37,6 +42,12 @@ $('#spark-registration-form').validate({
     },
     'answers[4388][answers]': {
       required: true
+    },
+    'contact[date_of_birth]':{
+      required: true
+    },
+    'are_you_simulated': {
+      valueMustEqual: ''
     }
   }
 });
@@ -49,10 +60,4 @@ $(function() {
   if (useJS) {
     $("#spark-registration-form").attr("action", formUrl);
   }
-
-  let flickity = new Flickity('.carousel', {
-    autoPlay: false,
-    pageDots: true,
-    wrapAround: true
-  });
 });
