@@ -7,9 +7,10 @@ let config = {
   
   entry: {
     app: [
-      'popper.js', 
+      // 'popper.js', 
       'bootstrap/js/src/tooltip',
       'bootstrap/js/src/popover',
+      'bootstrap/js/src/collapse',
       'jquery-validation',
       path.resolve(__dirname, 'src/scripts/app')
     ],

@@ -52,6 +52,14 @@ $('#spark-registration-form').validate({
   }
 });
 
+$("input[name='answers[4389][answers]']").on("change", (e) => {
+  if (e.currentTarget.value === "Yes") {
+    $("#realtor-details").collapse("show");
+  } else {
+    $("#realtor-details").collapse("hide");
+  }
+});
+
 var formUrl = "https://spark.re/shape-marketing-corp/rc-1/register/rc1-registration";
 
 $(function() {

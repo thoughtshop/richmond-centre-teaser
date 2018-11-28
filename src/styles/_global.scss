@@ -326,6 +326,15 @@ body {
       max-width: 100%;
     }
   }
+
+  #realtor-email {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &.open {
+      opacity: 1;
+    }
+  }
 }
 
 .submit-btn {
