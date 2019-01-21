@@ -556,18 +556,18 @@ footer {
   }
 
   .form-header {
-    display: grid;
-    grid-template-columns: 200px auto;
-    grid-column-gap: 1rem;
+    // display: grid;
+    // grid-template-columns: 200px auto;
+    // grid-column-gap: 1rem;
     margin-bottom: 2rem;
 
     .header-image {
-      grid-column: 1;
+      // grid-column: 1;
       width: 200px;
     }
 
     .header-text {
-      grid-column: 2;
+      // grid-column: 2;
 
       h2 {
         margin-top: 2rem;
