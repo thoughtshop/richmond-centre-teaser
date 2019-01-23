@@ -12,11 +12,6 @@ var cleavePostal = new Cleave('.input-postal', {
   uppercase: true
 });
 
-var cleaveDate = new Cleave('.input-date', {
-  date: true,
-  datePattern: ['Y', 'm', 'd']
-});
-
 $('.callout').popover({
   trigger: 'hover',
 });
