@@ -9,28 +9,26 @@
   
   <link href="//liveatcfrc.com/assets/images/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
   <link href="//liveatcfrc.com/assets/images/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-
-  <link href="@@seoImage" rel="image_src">
   
-  <meta property="og:title" content="@@pageTitle">
+  <meta property="og:title" content="@@if(seoTitle !== ''){@@seoTitle}@@if(seoTitle == ''){@@pageTitle}">
   <meta property="og:description" content="@@pageDescription">
   <meta property="og:url" content="@@pageURL">
-  <meta property="og:image" content="@@seoImage">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="@@pageTitle">
+  <meta name="twitter:title" content="@@if(seoTitle !== ''){@@seoTitle}@@if(seoTitle == ''){@@pageTitle}">
   <meta name="twitter:description" content="@@pageDescription">
-  <meta name="twitter:image" content="@@seoImage">
 
   <link href="//liveatcfrc.com/assets/app.css" media="all" rel="stylesheet">
 
+  <meta name="google-site-verification" content="T7iDBEujUoI1R6f6jiwwHUkjC-w543YvaUekwt57mQM" />
+  
   <!-- / Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-54CTVPT');
+    })(window,document,'script','dataLayer','GTM-WHZB6ZH');
     // End Google Tag Manager
   </script>
 </head>
