@@ -18,6 +18,12 @@
 }
 
 h2 {
+  color: $black;
+  font-size: 6vw;
+  margin: 1rem 0 2rem 0;
+}
+
+h3 {
   display: inline-block;
   margin: 2rem 0;
   font-family: $font-family-sans;
@@ -26,12 +32,6 @@ h2 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-}
-
-h3 {
-  color: $black;
-  font-size: 6vw;
-  margin: 1rem 0 2rem 0;
 }
 
 h4 {
@@ -569,13 +569,9 @@ footer {
     .header-text {
       // grid-column: 2;
 
-      h2 {
+      h3 {
         margin-top: 2rem;
         font-size: 1.9rem;
-      }
-
-      h3 {
-        font-size: 1.6rem;
       }
     }
   }
@@ -600,11 +596,8 @@ footer {
 
   .form-header {
     .header-text {
-      h2 {
-        font-size: 2.8rem;
-      }
       h3 {
-        font-size: 2rem;
+        font-size: 2.8rem;
       }
     }
   }
