@@ -1,5 +1,7 @@
 var gulp    = require('gulp'),
+    clean   = require('gulp-clean'),
     util   = require('gulp-util'),
+    ifElse = require('gulp-if-else'),
     webpack = require('webpack'),
     webpackStream = require('webpack-stream'),
     gulpWebpack = require('gulp-webpack'),
@@ -93,6 +95,11 @@ gulp.task('copy-assets', () => {
     .pipe(gulp.dest(config.dest + '/assets/images'));
 });
 
+gulp.task('clean', () => {
+  gulp.src(config.dest)
+    .pipe(ifElse(config.production, clean, ''))
+})
+
 gulp.task('connect', () => {
   connect.server({
     port: 3000,
@@ -108,6 +115,6 @@ gulp.task('watch', ['connect', 'build'], () => {
   gulp.watch(['./src/images/*'], ['copy-assets']);
 });
 
-gulp.task('build', ['html', 'copy-assets', 'webpack', 'sass']);
+gulp.task('build', ['clean', 'html', 'copy-assets', 'webpack', 'sass']);
 
 gulp.task('default', ['build']);
