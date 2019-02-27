@@ -61,7 +61,8 @@ gulp.task('html', [], () => {
     .pipe(fileinclude({
       basepath: './src/html_partials',
       context: {
-        robots: true
+        robots: true,
+        seoTitle: ""
       },
       indent: true
     }))
