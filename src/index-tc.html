@@ -32,18 +32,18 @@
           <!--[if IE 9]> <video style="display: none;"> <![endif]-->
           <source 
             media="(min-width: 768px)" 
-            srcset="//liveatcfrc.com/assets/images/callout-rendering.jpg 3840w,
-            //liveatcfrc.com/assets/images/callout-rendering-1920.jpg 1920w,
-            //liveatcfrc.com/assets/images/callout-rendering-1199.jpg 1199w"
+            srcset="<!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/callout-rendering.jpg 3840w,
+            <!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/callout-rendering-1920.jpg 1920w,
+            <!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/callout-rendering-1199.jpg 1199w"
             >
           <source 
             media="(min-width: 0)"
-            srcset="//liveatcfrc.com/assets/images/callout-rendering-mobile.jpg 1534w"
+            srcset="<!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/callout-rendering-mobile.jpg 1534w"
             >
           <!--[if IE 9]> </video> <![endif]-->
           <img 
             alt="Richmond Centre Master Plan Rendering" class="image-responsive" 
-            src="//liveatcfrc.com/assets/images/callout-rendering-1199.jpg"
+            src="<!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/callout-rendering-1199.jpg"
             >
         </picture>
 
@@ -263,7 +263,7 @@
 
         <div class="row presentation-centre">
           <div class="col-12 col-md-6">
-            <img class="image-responsive" src="//liveatcfrc.com/assets/images/location-map.png" alt="CF Richmond Centre Presentation Centre" />
+            <img class="image-responsive" src="<!-- @if PRODUCTION -->//liveatcfrc.com<!-- @endIf -->/assets/images/location-map.png" alt="CF Richmond Centre Presentation Centre" />
           </div>
 
           <div class="col-12 col-md-6">

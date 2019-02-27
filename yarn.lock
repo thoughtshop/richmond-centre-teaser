@@ -3014,6 +3014,15 @@ gulp-postcss@^8.0.0:
     postcss-load-config "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.1"
 
+gulp-preprocess@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/gulp-preprocess/-/gulp-preprocess-3.0.2.tgz#d7086a1583eff38cd978eaea23a6bbc442ee10e6"
+  integrity sha512-RsPVAlZPMo8HQwtYdu9g9iwD/IiEOfXz30fASBhiYoUL1B+Hqpw3NnCB4u2SD6foIRMkir7uwLFzjaLuo3jE5A==
+  dependencies:
+    lodash "^4.17.11"
+    map-stream "^0.1.x"
+    preprocess "^3.0.0"
+
 gulp-sass@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/gulp-sass/-/gulp-sass-4.0.2.tgz#cfb1e3eff2bd9852431c7ce87f43880807d8d505"
@@ -3061,7 +3070,7 @@ gulp-webpack@^1.5.0:
     vinyl ">=0.5.0 <0.6.0-0"
     webpack ">=1.9.0 <2.0.0-0"
 
-gulp@3:
+gulp@^3.9.1:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-3.9.1.tgz#571ce45928dd40af6514fc4011866016c13845b4"
   integrity sha1-VxzkWSjdQK9lFPxAEYZgFsE4RbQ=
@@ -4127,7 +4136,7 @@ map-stream@^0.0.7:
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.0.7.tgz#8a1f07896d82b10926bd3744a2420009f88974a8"
   integrity sha1-ih8HiW2CsQkmvTdEokIACfiJdKg=
 
-map-stream@~0.1.0:
+map-stream@^0.1.x, map-stream@~0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/map-stream/-/map-stream-0.1.0.tgz#e56aa94c4c8055a16404a0674b78f215f7c8e194"
 
@@ -5129,6 +5138,13 @@ postcss@^7.0.2:
     chalk "^2.4.1"
     source-map "^0.6.1"
     supports-color "^5.5.0"
+
+preprocess@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/preprocess/-/preprocess-3.1.0.tgz#a44e5cdd5bbb5a54f0ad289aaeed80995d7d938a"
+  integrity sha1-pE5c3Vu7WlTwrSiaru2AmV19k4o=
+  dependencies:
+    xregexp "3.1.0"
 
 preserve@^0.2.0:
   version "0.2.0"
@@ -6848,6 +6864,11 @@ wrappy@1:
 xml-char-classes@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/xml-char-classes/-/xml-char-classes-1.0.0.tgz#64657848a20ffc5df583a42ad8a277b4512bbc4d"
+
+xregexp@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-3.1.0.tgz#14d8461e0bdd38224bfee5039a0898fc42fcd336"
+  integrity sha1-FNhGHgvdOCJL/uUDmgiY/EL80zY=
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0, xtend@~4.0.0, xtend@~4.0.1:
   version "4.0.1"

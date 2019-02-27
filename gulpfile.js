@@ -9,7 +9,8 @@ var gulp    = require('gulp'),
     notify  = require('gulp-notify'),
     autoprefixer = require('autoprefixer'),
     fileinclude = require('gulp-file-include'),
-    postcss = require('gulp-postcss');
+    postcss = require('gulp-postcss'),
+    preprocess = require('gulp-preprocess');
 
 var config = {
   dest: util.env.production ? './dist' : './build',
@@ -68,6 +69,11 @@ gulp.task('html', [], () => {
     }))
     .on("error", notify.onError(error => {
       return "Error: " + error.message;
+    }))
+    .pipe(preprocess({
+      context: {
+        PRODUCTION: config.production
+      }
     }))
     .pipe(gulp.dest(config.dest))
     .pipe(connect.reload())
