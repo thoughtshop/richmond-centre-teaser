@@ -115,6 +115,6 @@ gulp.task('watch', ['connect', 'build'], () => {
   gulp.watch(['./src/images/*'], ['copy-assets']);
 });
 
-gulp.task('build', ['clean', 'html', 'copy-assets', 'webpack', 'sass']);
+gulp.task('build', ['html', 'copy-assets', 'webpack', 'sass']);
 
 gulp.task('default', ['build']);
