@@ -1,0 +1,115 @@
+#footer {
+  background-color: $black;
+  color: $white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $brand-secondary;
+    }
+  }
+
+  .contacts {
+    margin-bottom: 2rem;
+
+    .contact-link {
+
+      span {
+        color: $brand-primary;
+        font-family: $font-family;
+        font-weight: bold;
+        font-size: 0.9rem;
+        margin-right: 0.25rem;
+      }
+    }
+  }
+
+  .developers {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+
+    .developer-link {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+
+      svg {
+        height: 28px;
+        transition: transform 0.3s ease-out;
+
+        &.cf-logo {
+          width: 129px;
+        }
+  
+        &.shape-logo {
+          width: 153px;
+        }
+
+        path {
+          fill: $white;
+          transition: fill 0.3s ease;
+        }
+      }
+
+      &:hover {
+        svg {
+          transform: scale(1.02);
+
+          path {
+            fill: $brand-secondary;
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #footer {
+    .footer-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      grid-template-areas: 
+        "contacts developers"
+        "disclaimer disclaimer";
+    }
+
+    .contacts {
+      display: flex;
+      grid-area: contacts;
+      flex-direction: row;
+
+      .contact-link {
+        &:not(:first-child) {
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .developers {
+      justify-self: end;
+      flex-direction: row;
+      grid-area: developers;
+
+      .developer-link {
+        &:not(:first-child) {
+          margin-top: 0;
+          margin-left: 2rem;
+        }
+      }
+    }
+
+    .disclaimer {
+      grid-area: disclaimer;
+    }
+  }
+}

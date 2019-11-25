@@ -1,0 +1,88 @@
+#presentation-centre {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  .location-details {
+    margin-top: 2rem;
+
+    h3 {
+      em {
+        color: $brand-primary;
+        font-style: normal;
+      }
+    }
+
+    address {
+      font-family: $font-family-serif;
+      font-size: 1rem;
+
+      span {
+        font-size: 0.7rem;
+        letter-spacing: 0.05rem;
+      }
+    }
+  }
+
+  .reveal {
+    .location-map,
+    .location-details {
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-out;
+      visibility: hidden;
+    }
+
+    .location-details {
+      transition-delay: 0.5s;
+    }
+
+    &.in-viewport {
+      .location-map,
+      .location-details {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  #presentation-centre {
+    .section-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .location-map,
+    .location-details {
+      width: calc(50% - 2rem);
+    }
+
+    .location-details {
+      margin-top: 0;
+
+      address {
+        font-size: 1.5rem;
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  #presentation-centre {
+    .section-inner {
+      justify-content: flex-start;
+    }
+
+    .location-map {
+      margin-right: 4rem;
+      width: calc(40% - 2rem);
+    }
+  }
+}

@@ -1,6 +1,16 @@
 @import "./app_variables";
-@import "./_vendor";
+@import "./vendor";
 
-@import "./_fonts";
-@import "./_global";
-@import "./_lang";
+@import "./fonts";
+@import "./layout";
+@import "./global";
+@import "./lang";
+@import "./hero";
+@import "./intro";
+@import "./image-grid";
+@import "./features";
+@import "./team";
+@import "./register";
+@import "./presentation-centre";
+@import "./footer";
+@import "./thank-you";

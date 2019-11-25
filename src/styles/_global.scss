@@ -1,20 +1,15 @@
-.divider-after {
-  &::after {
-    background-color: $bronze;
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-  &.divider-center {
-    &::after {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.1rem;
 }
 
 h1 {
@@ -23,30 +18,27 @@ h1 {
 
 h2 {
   color: $black;
-  font-size: 6vw;
+  font-family: $font-family-serif;
+  font-size: 1.4rem;
   margin: 1rem 0 2rem 0;
 }
 
 h3 {
-  display: inline-block;
-  margin: 2rem 0;
-  font-family: $font-family-sans;
-  font-size: 2.5rem;
-  @include gradient-x($bronze-light, $bronze-dark);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: $black;
+  font-family: $font-family;
+  font-size: 1rem;
+  font-weight: bold;
   text-transform: uppercase;
+  // margin: 2rem 0;
 }
 
 h4 {
-  color: $black;
-  font-family: $font-family-serif;
-  margin: 2rem 0;
+  font-size: 1.3rem
 }
 
 h5 {
   color: $black;
-  font-family: $font-family-bold;
+  font-family: $font-family;
   font-size: 1.3rem;
 }
 
@@ -55,16 +47,19 @@ hr {
   margin-top: 2rem;
 }
 
-p {
+p, li, address, label, input {
+  letter-spacing: 0.05rem;
+
   strong {
-    font-family: $font-family-sans-bold;
+    font-family: $font-family;
   }
 }
 
 a {
   color: $body-copy;
-  @include transition(all 0.3s ease);
+  transition: color 0.3s ease;
   text-decoration: underline;
+
   &:hover,
   &:active,
   &:focus {
@@ -74,29 +69,25 @@ a {
   }
 }
 
-em {
-  color: $bronze;
-  text-decoration: none;
-  font-style: normal;
-}
+// em {
+//   color: $bronze;
+//   text-decoration: none;
+//   font-style: normal;
+// }
 
 body {
+  background-color: $white;
   color: $body-copy;
-  font-family: $font-family;
+  font-family: $font-family-serif;
 }
 
-#banner {
-  @include gradient-x($bronze-light, $bronze-dark);
-  color: $white;
-  font-family: $font-family-sans;
-  padding: 1rem 2rem;
-  text-align: center;
-  p {
-    margin-bottom: 0;
-  }
-  a {
-    color: $white;
-  }
+section {
+  background-color: $white;
+}
+
+.disclaimer {
+  font-size: 0.7rem;
+  letter-spacing: 0;
 }
 
 .image-responsive {
@@ -104,519 +95,46 @@ body {
   height: auto;
 }
 
-.form-control {
-  border-radius: 0;
-
-  &::-webkit-input-placeholder,
-  &::-moz-placeholder,
-  &:-ms-input-placeholder,
-  &:-moz-placeholder,
-  &::placeholder {
-    text-transform: uppercase;
-  }
-}
-
-.header-links {
-  font-family: $font-family-sans-bold;
-  font-size: 0.7rem;
-  letter-spacing: .05rem;
-  text-transform: uppercase;
-
-  > li {
-    a, span {
-      @include gradient-x($bronze-light, $bronze-dark);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: block;
-      padding: 1rem .5rem .5rem;
-    }
-
-    .highlight {
-      -webkit-background-clip: unset;
-      -webkit-text-fill-color: unset;
-      @include gradient-x($bronze-light, $bronze-dark);
-
-      color: $white;
-
-      &:hover {
-        color: darken($white, 20%);
-      }
-    }
-  }
-}
-
-.contest-rules {
-  font-family: $font-family-sans;
-  font-size: 0.7rem;
-}
-
-.hero {
+.divider-after {
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
   position: relative;
-  margin-bottom: 2rem;
 
-  .callouts {
-    display: none;
+  &::after {
+    background-color: $black;
+    content: "";
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-
-    .callout {
-      background-color: $teal;
-      border: 2px solid $white;
-      box-shadow: 0 0 6px $black;
-      color: $white;
-      font-family: $font-family-sans-bold;
-      width: 20px;
-      height: 20px;
-      border-radius: 15px;
-      position: absolute;
-      text-align: center;
-      line-height: 17px;
-
-      &.callout-square {
-        border-radius: 0;
-      }
-
-      &.callout-arrow {
-        &::after {
-          content: '';
-          display: block;
-          width: 40px;
-          height: 40px;
-          background-image: url('./images/trigger-arrow.png');
-          background-repeat: no-repeat;
-          background-size: 40px 40px;
-          position: relative;
-          left: -12px;
-          top: -12px;
-        }
-      }
-
-      &.always-on {
-        
-
-        .caption {
-          border: 2px solid $white;
-          box-shadow: 0 0 6px $black;
-          color: $white;
-          font-family: $font-family-sans;
-          font-size: 0.7rem;
-          @include gradient-x($bronze-light, $bronze-dark);
-          text-transform: uppercase;
-          padding: .25rem 1rem;
-          width: 180px;
-          position: absolute;
-          top: -60px;
-        }
-      }
-    }
-
-    .callout-1 {
-      left: 8%;
-      top: 60%;
-    }
-
-    .callout-2 {
-      left: 17%;
-      top: 66%;
-    }
-
-    .callout-3 {
-      left: 33%;
-      top: 20%;
-    }
-
-    .callout-4 {
-      left: 32%;
-      top: 6%;
-    }
-
-    .callout-5 {
-      left: 27%;
-      top: 34%;
-    }
-
-    .callout-6 {
-      left: 33%;
-      top: 39%;
-    }
-
-    .callout-7 {
-      left: 32%;
-      top: 84%;
-    }
-
-    .callout-8 {
-      left: 14%;
-      top: 83%;
-    }
-
-    .callout-9 {
-      left: 40%;
-      top: 85%;
-    }
-
-    .callout-11 {
-      left: 10%;
-      top: 40%;
-    }
-  }
-
-  .popover {
-    border: 2px solid $white;
-    box-shadow: 0 0 6px $black;
-    color: $white;
-    font-family: $font-family-sans;
-    font-size: 0.7rem;
-    @include gradient-x($bronze-light, $bronze-dark);
-    text-transform: uppercase;
-    padding: .25rem 1rem;
-    max-width: 80vw;
-
-    .popover-header {
-      display: none;
-    }
-  }  
-}
-
-.eight-points {
-  p {
-    font-family: $font-family-serif;
-    font-size: 0.8rem;
+    width: 10px;
+    height: 1px;
   }
 }
 
-.form-header {
-  .header-image {
-    width: 200px;
-  }
-  .header-text {
-    h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-    } 
-    h3 {
-      margin-top: 0;
-    } 
-  }
-}
-
-#spark-registration-form {
-  font-family: $font-family-sans;
-
-  p {
-    text-transform: uppercase;
-    margin-bottom: 0.2rem;
-  }
-
-  .consent {
-    display: grid;
-    align-items: flex-start;
-    grid-template-columns: 25px auto;
-    width: 100%;
-
-    .form-check-input {
-      grid-column: 1;
-    }
-
-    input {
-      margin-right: 0.5rem;
-    }
-
-    .form-check-label {
-      grid-column: 2;
-      max-width: 100%;
-    }
-  }
-
-  #realtor-email {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-
-    &.open {
-      opacity: 1;
-    }
-  }
-}
-
-.submit-btn {
-  @include gradient-x($bronze-light, $bronze-dark);
-  border: none;
-  color: $white;
-  letter-spacing: 0.05rem;
+.btn {
+  border-radius: 0;
+  text-decoration: none;
   text-transform: uppercase;
-  padding: 0.5rem 2rem;
-}
-
-.thank-you {
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  h2 {
-    max-width: 100%;
-    background: none;
-    color: $black;
-    font-size: 2rem;
-    -webkit-text-fill-color: unset;
-  }
-}
-
-.disclaimer {
-  font-family: $font-family-sans;
-  font-size: 0.7rem;
-  margin: 2rem 0;
-}
-
-footer {
-  @include gradient-x($bronze-light, $bronze-dark);
-  color: $white;
-  font-family: $font-family-sans;
+  font-family: $font-family;
   font-size: 0.8rem;
-  padding: 1rem 0 2rem;
-
-  a {
-    color: $white;
-    &:hover {
-      color: darken($bronze-dark, 20%);
-    }
-  }
-
-  .developer-link {
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .disclaimer {
-    font-size: .7em;
-    margin: 0 0 1rem 0;
-  }
+  letter-spacing: 0.1rem;
+  padding: 0.375rem 1.5rem;
 }
 
-.presentation-centre {
-  // font-family: $font-family-sans;
-
-  h3 {
-    display: inline-block;
-    margin: 2rem 0 0;
-    font-family: $font-family-sans-bold;
-    font-size: 1.8rem;
-    @include gradient-x($bronze-light, $bronze-dark);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-transform: uppercase;
-  }
-
-  .lead {
-    font-family: $font-family-sans-bold;
-    span {
-      font-family: $font-family-sans;
-    }
-  }
+.btn-primary {
+  @include button-variant($brand-primary, $brand-primary);
 }
 
-.no-backgroundcliptext {
-  h2 {
-    background-image: none;
-    color: $bronze;
-    filter: none;
-  }
-
-  .header-links {
-    > li {
-      a, span {
-        background-image: none;
-        color: $bronze;
-      }
-
-      .highlight {
-        color: $white;
-        @include gradient-x($bronze-light, $bronze-dark);
-      }
-    }
-  }
-}
-
-// .no-flexbox.no-flexboxlegacy.flexboxtweener {
-//   .thank-you {
-//     > .col {
-//       -ms-flex: 0 0 auto;
-//     }
-//   }
-// }
-
-@include media-breakpoint-up(sm) {
-  h3 {
-    font-size: 2rem;
-  }
-
-  h5 {
-    font-size: 1.5rem;
-  }
-
-  .eight-points {
-    p {
-      font-size: .9rem;
-    }
-  }
-
-  .carousel {
-    .callouts {
-      .callout {
-        border-width: 3px;
-        width: 25px;
-        height: 25px;
-        line-height: 21px;
-
-        &.callout-arrow {
-          &::after {
-            content: '';
-            display: block;
-            width: 40px;
-            height: 40px;
-
-            background-size: 40px 40px;
-            position: relative;
-            left: -50%;
-            top: -50%;
-          }
-        }
-
-        .callout-3 {
-          left: 41%;
-        }
-
-        .callout-5 {
-          left: 6%;
-        }
-      }
-    }
-
-    .popover {
-      border-width: 3px;
-      font-size: 1rem;
-    }
-  }
+.btn-secondary {
+  @include button-variant($warm-gray, $warm-gray);
 }
 
 @include media-breakpoint-up(md) {
   h2 {
-    font-size: 3rem;
-  }
-
-  h5 {
-    font-size: 1.6rem;
-  }
-
-  .header-links {
-    font-size: 1rem;
-    letter-spacing: .1rem;
-    > li {
-      a, span {
-        display: block;
-        padding: 2rem 1.5rem .5rem;
-      }
-    }
-  }
-
-  .hero {
-    .callouts {
-      display: block;
-    }
-  }
-
-  .columns {
-    column-count: 2;
-    column-gap: 2rem;
-  }
-
-  .eight-points {
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  .carousel {
-    .flickity-prev-next-button {
-      display: block !important;
-    }
-
-    .callouts {
-      .callout-9 {
-        left: 89%;
-      }
-    }
-  }
-
-  .thank-you {
-    min-height: 100vh;
-    padding-top: 0;
-    padding-bottom: 0;
-
-    > .col {
-      min-height: 100vh;
-    }
-  }
-
-  .form-header {
-    // display: grid;
-    // grid-template-columns: 200px auto;
-    // grid-column-gap: 1rem;
-    margin-bottom: 2rem;
-
-    .header-image {
-      // grid-column: 1;
-      width: 200px;
-    }
-
-    .header-text {
-      // grid-column: 2;
-
-      h3 {
-        margin-top: 2rem;
-        font-size: 1.9rem;
-      }
-    }
-  }
-
-  #spark-registration-form {
-    .consent {
-      input {
-        
-      }
-    }
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  h3 {
     font-size: 2rem;
   }
 
-  h5 {
-    font-size: 1.8rem;
-  }
-
-  .form-header {
-    .header-text {
-      h3 {
-        font-size: 2.8rem;
-      }
-    }
-  }
-}
-
-@include media-breakpoint-up(xl) {
-  h2 {
-    font-size: 3.5rem;
-  }
-
   h3 {
-    font-size: 2.4rem;
-  }
-
-  h4 {
-    font-size: 1.7rem;
+    font-size: 1.3rem;
   }
 }

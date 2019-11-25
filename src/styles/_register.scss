@@ -1,0 +1,89 @@
+#register {
+  background-color: $brand-secondary;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  form {
+    font-family: $font-family;
+  }
+
+  label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+
+    &.error {
+      color: $brand-primary;
+      font-size: 0.6rem;
+    }
+  }
+
+  .form-control {
+    background-color: transparent;
+    border-color: $gray-500;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+    color: $black;
+    padding-left: 0;
+    padding-right: 0;
+
+    &::placeholder {
+      color: $gray-800;
+      transition: color 0.3s ease;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+    }
+
+    &:focus {
+      border-color: $brand-primary;
+      box-shadow: none;
+      outline: none;
+
+      &::placeholder {
+        color: $gray-600;
+      }
+    }
+  }
+
+  .custom-select {
+    background-color: transparent;
+    border-color: $gray-500;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    color: $black;
+    padding-left: 0;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .form-check-label {
+    font-family: $font-family-serif;
+    text-transform: none;
+
+    em {
+      font-family: $font-family;
+      font-style: normal;
+      text-transform: uppercase;
+    }
+  }
+
+  .reveal {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.6s;
+    transition-timing-function: ease-out;
+    visibility: hidden;
+
+    &.in-viewport {     
+      opacity: 1;
+      visibility: visible;
+    }
+    
+  }
+}

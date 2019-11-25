@@ -1,0 +1,41 @@
+main {
+  position: relative;
+  top: 100vh;
+}
+
+.container {
+  @include make-container-max-widths;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+
+  @include media-breakpoint-up(md) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.col-sm-6 {
+  position: relative;
+  width: 100%;
+}
+
+@include media-breakpoint-up(sm) {
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -1rem;
+    margin-left: -1rem;
+  
+    > .col,
+    > [class*="col-"] {
+      padding-right: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  .col-sm-6 {
+    @include make-col(6);
+  }
+}

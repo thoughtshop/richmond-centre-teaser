@@ -1,0 +1,73 @@
+#team {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .developer {
+    &:not(:first-child) {
+      margin-top: 4rem;
+    }
+
+    .developer-logo {
+      height: 28px;
+      margin-bottom: 1.5rem;
+
+      &.cf-logo {
+        width: 129px;
+      }
+
+      &.shape-logo {
+        width: 153px;
+      }
+
+      path {
+        fill: $black;
+      }
+    }
+  }
+
+  .reveal {
+    h2, 
+    .developer {
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-out;
+      visibility: hidden;
+    }
+
+    .developer {
+      &:nth-child(1) {
+        transition-delay: 0.5s;
+      }
+
+      &:nth-child(2) {
+        transition-delay: 1s;
+      }
+    }
+
+    &.in-viewport {
+      h2,
+      .developer {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #team {
+    .section-inner {
+      display: flex;
+      justify-content: space-between;
+
+      .developer {
+        width: calc(50% - 2rem);
+
+        &:not(:first-child) {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

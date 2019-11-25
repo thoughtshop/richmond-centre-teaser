@@ -1,0 +1,32 @@
+$white: #fff;
+$black: #000;
+
+$bronze: #bf816a;
+$bronze-light: #c89882;
+$bronze-dark: #856e54;
+$teal: #568c99;
+
+$warm-gray: #e0ded6;
+$red: #cc4529;
+$body-copy: $black;
+
+$brand-primary: $red;
+$brand-secondary: $warm-gray;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+$container-max-widths: (
+  sm: 570px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$font-family: 'Proxima Nova', helvetica, sans-serif;
+$font-family-serif: 'Electra LT Std', helvetica, sans-serif;

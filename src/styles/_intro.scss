@@ -1,0 +1,139 @@
+@keyframes fadeInOut {
+  0% { opacity: 0;}
+  4% { opacity: 1;}
+  29% { opacity: 1;}
+  33% { opacity: 0;}
+  100% { opacity: 0;}
+}
+
+#intro {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+
+  .intro-image-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr;
+    grid-template-rows: max-content max-content;
+    grid-template-areas: 
+      ". image2 ."
+      "image1 . image3";
+
+    .grid-image {
+      position: relative;
+      height: 0;
+      padding-bottom: 100%;
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        width: 100%;
+      }
+    }
+
+    .grid-image-1 {
+      grid-area: image1;
+
+      .rc-logo {
+        background-color: $bronze-dark;
+        width: 100%;
+        
+        
+        path {
+          fill: $white;
+        }
+      }
+    }
+
+    .grid-image-2 {
+      background-color: $brand-primary;
+      grid-area: image2;
+
+      img {
+        @for $i from 2 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: 5s * ($i - 1);
+          }
+        }
+      }
+    }
+
+    .grid-image-3 {
+      background-color: $black;
+      grid-area: image3;
+
+      img {
+        @for $i from 1 through 4 {
+          &:nth-child(#{$i}) {
+            animation-delay: 5s * ($i - 1) + 2.5s;
+          }
+        }
+      }
+    }
+  }
+
+  .intro-copy {
+    margin-top: 2rem;
+  }
+
+  &.reveal {
+    .intro-copy {
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 0.6s;
+      transition-timing-function: ease-out;
+      visibility: hidden;
+    }
+    
+    .grid-image {
+      img {
+        opacity: 0;
+      }
+    }
+  
+    &.in-viewport {
+      .intro-copy {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .grid-image {
+        img {
+          animation-name: fadeInOut;
+          animation-duration: 20s;
+          animation-iteration-count: infinite;
+        }
+      }
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  #intro {
+    .section-inner {
+      display: grid;
+      grid-template-columns: 1fr 3rem 1fr;
+      grid-template-rows: auto;
+    }
+
+    .intro-image-grid {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    .intro-copy {
+      align-self: center;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  #intro {
+    .section-inner {
+      grid-template-columns: 1fr 4rem 1.5fr;
+    }
+  }
+}
