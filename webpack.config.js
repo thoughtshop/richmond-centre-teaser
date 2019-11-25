@@ -7,14 +7,15 @@ let config = {
   
   entry: {
     app: [
-      // 'popper.js', 
-      'bootstrap/js/src/tooltip',
-      'bootstrap/js/src/popover',
       'bootstrap/js/src/collapse',
       'jquery-validation',
       path.resolve(__dirname, 'src/scripts/app')
     ],
-    vendor: ['picturefill', path.resolve(__dirname, 'src/scripts/vendor')]
+    vendor: [
+      'lazysizes',
+      'picturefill', 
+      path.resolve(__dirname, 'src/scripts/vendor')
+    ]
   },
 
   output: {
