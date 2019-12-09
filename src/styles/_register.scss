@@ -62,6 +62,12 @@
     }
   }
 
+  .form-check-inline {
+    .form-check-input {
+      flex-shrink: 0;
+    }
+  }
+
   .form-check-label {
     font-family: $font-family-serif;
     text-transform: none;
