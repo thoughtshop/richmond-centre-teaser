@@ -37,7 +37,7 @@
     "jquery-validation": "^1.17.0",
     "lazysizes": "^5.2.0-beta1",
     "lodash": "^4.17.11",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "modernizr": "^3.7.1",
     "modernizr-webpack-plugin": "^1.0.6",
     "path": "~0.12.7",
