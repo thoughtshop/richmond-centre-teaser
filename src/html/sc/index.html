@@ -236,11 +236,11 @@
 
           <div class="form-row">
             <div class="col-sm-6 form-group">
-              <label for="answers-4390">您是否是房地产经纪？</label>
-              <select id="answers-4390" class="custom-select" name="answers[4390][answers]">
+              <label for="agent">您是否是房地产经纪？</label>
+              <select id="agent" class="custom-select" name="agent">
                 <option value="" selected disabled>-</option>
-                <option value="Yes">是</option>
-                <option value="No">否</option>
+                <option value="true">是</option>
+                <option value="false">否</option>
               </select>
             </div>
 
@@ -251,7 +251,14 @@
                 <option value="Yes">是</option>
                 <option value="No">否</option>
               </select>
+            </div>
+          </div>
 
+          <div id="agent-details" class="collapse">
+            <div class="form-row">
+              <div class="col-sm-6 form-group">
+                <input class="form-control" name="contact[brokerage_name]" placeholder="房产经纪人所在公司" type="text">
+              </div>
             </div>
           </div>
 

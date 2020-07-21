@@ -62,6 +62,14 @@ $("select[name='answers[4389][answers]']").on("change", (e) => {
   }
 })
 
+$("select[name='agent']").on("change", (e) => {
+  if (e.currentTarget.value === "true") {
+    $("#agent-details").collapse("show");
+  } else {
+    $("#agent-details").collapse("hide");
+  }
+})
+
 const sections = document.querySelectorAll('.reveal');
 
 const observer = new IntersectionObserver(sections => {
