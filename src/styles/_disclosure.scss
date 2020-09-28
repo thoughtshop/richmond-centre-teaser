@@ -153,7 +153,6 @@
       align-content: center;
       align-items: center;
       justify-content: center;
-      height: 100%;
     }
   }
 }
@@ -173,12 +172,8 @@
 
   .disclosure {
 
-    main {
-      height: 100vh;
-    }
-
     .disclosure-checks {
-      
+
       .disclosure-confirmation {
         width: 25px;
         height: 25px;
