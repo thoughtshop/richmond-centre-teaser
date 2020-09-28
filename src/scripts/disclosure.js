@@ -9,9 +9,7 @@ function enableRadioInput() {
 
   radioInput.disabled = false;
 
-  const tooltipSelector = `#${this.id} + .tooltip`;
-
-  document.querySelector(tooltipSelector).classList.add('hidden');
+  document.querySelector(`#${this.id} + .tooltip`).classList.add('hidden');
 }
 
 function checkAgreeBtnState() {
