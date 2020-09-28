@@ -105,6 +105,9 @@ export const copyAssets = (done) => {
   gulp.src(['./src/video/*'])
     .pipe(gulp.dest(config.dest + '/assets/video'));
 
+  gulp.src(['./src/documents/*'])
+    .pipe(gulp.dest(config.dest + '/assets/documents'));
+
   done()
 }
 
@@ -120,7 +123,7 @@ const watchFiles = () => {
   gulp.watch(['./src/styles/*', './src/styles/**/*'], css)
   gulp.watch(['./src/html/*', './src/html/**/*'], html)
   gulp.watch(['./src/scripts/*', './src/scripts/**/*', './src/scripts/**/**/*'], js)
-  gulp.watch(['./src/images/*', './src/video/*'], copyAssets)
+  gulp.watch(['./src/images/*', './src/video/*', './src/documents/*'], copyAssets)
 }
 
 export const deploy = gulp.series(clean, gulp.parallel(copyAssets, css, html, js))
