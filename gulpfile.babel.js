@@ -173,7 +173,7 @@ export const copyAssets = (done) => {
     }))
     .pipe(gulp.dest(config.dest + '/assets/images'));
 
-  gulp.src(['./src/registration.php'])
+  gulp.src(['./src/*.php'])
     .pipe(gulp.dest(config.dest + '/assets'));
 
   gulp.src(['./src/documents/*'])
