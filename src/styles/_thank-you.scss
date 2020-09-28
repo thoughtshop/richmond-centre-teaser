@@ -1,7 +1,7 @@
 .thank-you {
+  height: 100%;
   background-color: $black;
   color: $white;
-  height: 100%;
 
   h2,
   h3 {
@@ -19,20 +19,22 @@
   }
 
   .thank-you-inner {
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
+
     text-align: center;
   }
 
   .rc-logo {
-    background-color: $bronze-dark;
     width: 100px;
     height: 100px;
     margin-bottom: 3rem;
+
+    background-color: $bronze-dark;
 
     path {
       fill: $white;
@@ -41,7 +43,9 @@
 }
 
 @include media-breakpoint-up(md) {
+
   .thank-you {  
+
     .rc-logo {
       width: 150px;
       height: 150px;

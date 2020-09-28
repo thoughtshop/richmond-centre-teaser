@@ -3,6 +3,7 @@
   padding-bottom: 4rem;
 
   .developer {
+
     &:not(:first-child) {
       margin-top: 4rem;
     }
@@ -26,16 +27,20 @@
   }
 
   .reveal {
-    h2, 
+
+    h2,
+ 
     .developer {
-      opacity: 0;
-      transition-property: opacity;
-      transition-duration: 0.6s;
-      transition-timing-function: ease-out;
       visibility: hidden;
+      opacity: 0;
+
+      transition-timing-function: ease-out;
+      transition-duration: 0.6s;
+      transition-property: opacity;
     }
 
     .developer {
+
       &:nth-child(1) {
         transition-delay: 0.5s;
       }
@@ -46,17 +51,20 @@
     }
 
     &.in-viewport {
+
       h2,
       .developer {
-        opacity: 1;
         visibility: visible;
+        opacity: 1;
       }
     }
   }
 }
 
 @include media-breakpoint-up(md) {
+
   #team {
+
     .section-inner {
       display: flex;
       justify-content: space-between;

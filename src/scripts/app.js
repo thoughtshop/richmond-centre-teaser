@@ -1,21 +1,21 @@
-import 'intersection-observer'
-import Rellax from 'rellax'
-import forEach from 'lodash/forEach'
+import 'intersection-observer';
+import Rellax from 'rellax';
+import forEach from 'lodash/forEach';
 
 const pageReady = () => {
   const sections = document.querySelectorAll('.reveal');
 
-  const observer = new IntersectionObserver(sections => {
-    forEach(sections, section => {
+  const observer = new IntersectionObserver((sections) => {
+    forEach(sections, (section) => {
       if (section.isIntersecting) {
-        section.target.classList.add('in-viewport')
+        section.target.classList.add('in-viewport');
       }
-    })
+    });
   }, {
     threshold: 0.4
   });
 
-  forEach(sections, section => {
+  forEach(sections, (section) => {
     observer.observe(section);
   });
 
