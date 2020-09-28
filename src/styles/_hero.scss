@@ -1,4 +1,5 @@
 @keyframes first {
+
   0% {
     opacity: 0;
   }
@@ -27,8 +28,8 @@
     opacity: 0;
   }
 }
-
 @keyframes second {
+
   0% {
     opacity: 0;
   }
@@ -61,8 +62,8 @@
     opacity: 0;
   }
 }
-
 @keyframes third {
+
   0% {
     opacity: 0;
   }
@@ -99,8 +100,8 @@
     opacity: 0;
   }
 }
-
 @keyframes fourth {
+
   0% {
     opacity: 0;
   }
@@ -133,8 +134,8 @@
     opacity: 0;
   }
 }
-
 @keyframes fifth {
+
   0% {
     opacity: 0;
   }
@@ -167,8 +168,8 @@
     opacity: 0;
   }
 }
-
 @keyframes sixth {
+
   0% {
     opacity: 0;
   }
@@ -197,8 +198,8 @@
     opacity: 0;
   }
 }
-
 @keyframes heroImage {
+
   0% {
     opacity: 0;
   }
@@ -211,8 +212,8 @@
     opacity: 1;
   }
 }
-
 @keyframes regBtnColor {
+
   0% {
     background-color: $warm-gray;
     color: $black;
@@ -230,54 +231,64 @@
 }
 
 #hero {
-  background-color: $brand-primary;
-  height: 100vh;
-  min-height: 420px;
   position: fixed;
-  width: 100%;
   z-index: 0;
 
+  width: 100%;
+  height: 100vh;
+  min-height: 420px;
+
+  background-color: $brand-primary;
+
   .hero-image {
-    opacity: 0;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
+
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 50% 80%;
+
+    opacity: 0;
+
     animation-name: heroImage;
     animation-duration: 9s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
     animation-delay: 0.5s;
-    z-index: -1;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
   }
 
   .hero-text {
-    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    max-width: 230px;
     height: 100%;
     margin: 0 auto;
-    max-width: 230px;
+
+    color: $white;
   }
 
   .everything-item {
     opacity: 0;
-    animation-duration: 9s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: 1;
-    animation-delay: 0.5s;
-    line-height: 1;
+
     font-size: 1.8rem;
+    line-height: 1;
+
+    animation-duration: 9s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 
     &.logo {
-      width: 100%;
       position: relative;
-      margin-top: 1rem;
       top: -1.5rem;
+
+      width: 100%;
+      margin-top: 1rem;
+
       opacity: 1;
 
       path {
@@ -320,8 +331,8 @@
 
     animation-name: regBtnColor;
     animation-duration: 9.5s;
-    animation-fill-mode: forwards;
     animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 
     &:hover {
       background-color: darken($brand-primary, 10%);
@@ -348,6 +359,7 @@
 }
 
 @include media-breakpoint-up(sm) {
+
   #hero {
     min-height: 520px;
 
@@ -360,8 +372,8 @@
     }
   }
 }
-
 @include media-breakpoint-up(md) {
+
   #hero {
     min-height: 720px;
 

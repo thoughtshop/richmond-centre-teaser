@@ -1,14 +1,22 @@
 @keyframes fadeIn {
+
   0% { opacity: 0; }
+
   100% { opacity: 1; }
 }
-
 @keyframes fadeOut {
+
   0% { opacity: 1; }
+
   100% { opacity: 0; }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   letter-spacing: 0.1rem;
 }
 
@@ -17,17 +25,18 @@ h1 {
 }
 
 h2 {
-  color: $black;
-  font-family: $font-family-serif;
-  font-size: 1.4rem;
   margin: 1rem 0 2rem 0;
+
+  color: $black;
+  font-size: 1.4rem;
+  font-family: $font-family-serif;
 }
 
 h3 {
   color: $black;
-  font-family: $font-family;
-  font-size: 1rem;
   font-weight: bold;
+  font-size: 1rem;
+  font-family: $font-family;
   text-transform: uppercase;
   // margin: 2rem 0;
 }
@@ -38,16 +47,20 @@ h4 {
 
 h5 {
   color: $black;
-  font-family: $font-family;
   font-size: 1.3rem;
+  font-family: $font-family;
 }
 
 hr {
-  border-top: 1px solid #807e82;
   margin-top: 2rem;
+  border-top: 1px solid #807e82;
 }
 
-p, li, address, label, input {
+p,
+li,
+address,
+label,
+input {
   letter-spacing: 0.05rem;
 
   strong {
@@ -57,14 +70,14 @@ p, li, address, label, input {
 
 a {
   color: $body-copy;
-  transition: color 0.3s ease;
   text-decoration: underline;
+  transition: color 0.3s ease;
 
   &:hover,
   &:active,
   &:focus {
-    color: darken($body-copy, 20%);
     outline: none;
+    color: darken($body-copy, 20%);
     text-decoration: none;
   }
 }
@@ -96,29 +109,34 @@ section {
 }
 
 .divider-after {
-  padding-bottom: 1rem;
-  margin-bottom: 1.5rem;
   position: relative;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
 
   &::after {
-    background-color: $black;
-    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
+
     width: 10px;
     height: 1px;
+
+    background-color: $black;
+
+    content: "";
   }
 }
 
 .btn {
-  border-radius: 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-family: $font-family;
-  font-size: 0.8rem;
-  letter-spacing: 0.1rem;
   padding: 0.375rem 1.5rem;
+
+  border-radius: 0;
+
+  font-size: 0.8rem;
+  font-family: $font-family;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .btn-primary {
@@ -130,6 +148,7 @@ section {
 }
 
 @include media-breakpoint-up(md) {
+
   h2 {
     font-size: 2rem;
   }

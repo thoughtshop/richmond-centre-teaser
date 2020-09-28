@@ -1,7 +1,7 @@
 #register {
-  background-color: $brand-secondary;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  background-color: $brand-secondary;
 
   form {
     font-family: $font-family;
@@ -18,27 +18,30 @@
   }
 
   .form-control {
+    padding-right: 0;
+    padding-left: 0;
+
     background-color: transparent;
     border-color: $gray-500;
     border-top: 0;
     border-right: 0;
     border-left: 0;
     border-radius: 0;
+
     color: $black;
-    padding-left: 0;
-    padding-right: 0;
 
     &::placeholder {
       color: $gray-800;
-      transition: color 0.3s ease;
       font-size: 0.7rem;
       text-transform: uppercase;
+
+      transition: color 0.3s ease;
     }
 
     &:focus {
       border-color: $brand-primary;
-      box-shadow: none;
       outline: none;
+      box-shadow: none;
 
       &::placeholder {
         color: $gray-600;
@@ -47,22 +50,25 @@
   }
 
   .custom-select {
-    background-color: transparent;
-    border-color: $gray-500;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-    color: $black;
     padding-left: 0;
 
+    background-color: transparent;
+    border-color: $gray-500;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-radius: 0;
+
+    color: $black;
+
     &:focus {
-      box-shadow: none;
       outline: none;
+      box-shadow: none;
     }
   }
 
   .form-check-inline {
+
     .form-check-input {
       flex-shrink: 0;
     }
@@ -80,15 +86,16 @@
   }
 
   .reveal {
-    opacity: 0;
-    transition-property: opacity;
-    transition-duration: 0.6s;
-    transition-timing-function: ease-out;
     visibility: hidden;
+    opacity: 0;
 
-    &.in-viewport {     
+    transition-timing-function: ease-out;
+    transition-duration: 0.6s;
+    transition-property: opacity;
+
+    &.in-viewport {
+      visibility: visible;     
       opacity: 1;
-      visibility: visible;
     }
     
   }
