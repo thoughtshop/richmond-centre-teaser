@@ -9,6 +9,7 @@ let config = {
     app: [
       'bootstrap/js/src/collapse',
       'jquery-validation',
+      path.resolve(__dirname, 'src/scripts/registration'),
       path.resolve(__dirname, 'src/scripts/app')
     ],
     vendor: [
