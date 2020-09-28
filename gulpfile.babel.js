@@ -102,8 +102,8 @@ export const copyAssets = (done) => {
     }))
     .pipe(gulp.dest(config.dest + '/assets/images'));
 
-  gulp.src(['./src/video/*'])
-    .pipe(gulp.dest(config.dest + '/assets/video'));
+  gulp.src(['./src/registration.php'])
+    .pipe(gulp.dest(config.dest + '/assets'));
 
   done()
 }
@@ -117,14 +117,14 @@ const connect = () => {
 }
 
 const watchFiles = () => {
-  gulp.watch(['./src/styles/*', './src/styles/**/*'], css)
-  gulp.watch(['./src/html/*', './src/html/**/*'], html)
-  gulp.watch(['./src/scripts/*', './src/scripts/**/*', './src/scripts/**/**/*'], js)
-  gulp.watch(['./src/images/*', './src/video/*'], copyAssets)
+  gulp.watch(['./src/styles/*', './src/styles/**/*'], css);
+  gulp.watch(['./src/html/*', './src/html/**/*'], html);
+  gulp.watch(['./src/scripts/*', './src/scripts/**/*', './src/scripts/**/**/*'], js);
+  gulp.watch(['./src/registration.php', './src/images/*', './src/images/**/*'], copyAssets);
 }
 
-export const deploy = gulp.series(clean, gulp.parallel(copyAssets, css, html, js))
-export const build = gulp.parallel(copyAssets, css, html, js)
-export const watch = gulp.parallel(connect, build, watchFiles)
+export const deploy = gulp.series(clean, gulp.parallel(copyAssets, css, html, js));
+export const build = gulp.parallel(copyAssets, css, html, js);
+export const watch = gulp.parallel(connect, build, watchFiles);
 
 export default build
