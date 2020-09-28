@@ -12,7 +12,7 @@ function enableRadioInput() {
   document.querySelector(`#${this.id} + .tooltip`).classList.add('hidden');
 }
 
-function checkAgreeBtnState() {
+function updateAgreeBtnState() {
   if (!(dorts.disabled) && !(drup.disabled) && dortsConfirm.checked && drupConfirm.checked) {
     agreeBtn.classList.remove('disabled');
   }
@@ -20,5 +20,5 @@ function checkAgreeBtnState() {
 
 dorts.addEventListener('click', enableRadioInput);
 drup.addEventListener('click', enableRadioInput);
-dortsConfirm.addEventListener('change', checkAgreeBtnState);
-drupConfirm.addEventListener('change', checkAgreeBtnState);
+dortsConfirm.addEventListener('change', updateAgreeBtnState);
+drupConfirm.addEventListener('change', updateAgreeBtnState);
