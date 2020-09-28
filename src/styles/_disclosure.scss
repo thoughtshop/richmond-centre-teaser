@@ -1,0 +1,180 @@
+.disclosure {
+  background-color: $pink-white;
+  height: 100%;
+
+  h1,
+  h2,
+  h3,
+  p,
+  a,
+  span,
+  label {
+    color: $white;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  h1 {
+    width: 100%;
+  }
+
+  h2, .disclosure-link {
+    font-family: $font-family;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    &::after {
+      display: block;
+      content: '';
+      width: 26px;
+      background-color: $white;
+      height: 3px;
+      margin-top: 2rem;
+    }
+  }
+
+  .disclosure-link {
+    font-size: 1.25rem;
+  }
+
+  .tooltip {
+    font-family: $font-family-serif;
+    text-transform: none;
+    font-size: .9rem;
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    &.hidden {
+      opacity: 0;
+    }
+  }
+
+  .disclosure-inner {
+    background-color: $red;
+    padding: 3rem 1.5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+
+  .disclosure-checks {
+    width: 100%;
+
+    .disclosure-confirmation {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -ms-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+      border: 1px solid $white;
+      min-width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $red;
+      transition: background-color 300ms ease;
+      outline: none;
+      cursor: no-drop;
+
+      &.enabled {
+        cursor: pointer;
+      }
+
+      &:checked {
+        background-color: $white;
+      }
+    }
+  }
+
+  .disclosure-item {
+    margin-bottom: 1rem;
+
+    label {
+      margin-left: .75rem;
+      font-size: .9rem;
+    }
+
+    &:nth-of-type(even) {
+      margin-bottom: 2rem;
+    }
+
+    &:nth-of-type(3), &:nth-of-type(4) {
+      display: flex;
+    }
+  }
+
+  #agree-btn {
+    width: 200px;
+    border: 1px solid $white;
+    pointer-events: none;
+    opacity: .5;
+    transition: opacity 300ms ease;
+
+    &.enabled {
+      pointer-events: auto;
+      opacity: 1;
+    }
+  }
+
+  p {
+    margin-bottom: 2rem;
+  }
+
+  main {
+    position: relative;
+    top: 0;
+    min-height: 100vh;
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .disclosure {
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .disclosure {
+    main {
+      height: 100vh;
+    }
+
+    .disclosure-checks {
+      .disclosure-confirmation {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    .disclosure-inner {
+      padding: 3rem 6rem;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  }
+}
