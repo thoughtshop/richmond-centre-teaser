@@ -1,5 +1,5 @@
-import Cleave from 'cleave.js'
-import 'cleave.js/dist/addons/cleave-phone.ca'
+import Cleave from 'cleave.js';
+import 'cleave.js/dist/addons/cleave-phone.ca';
 
 const cleavePhone = new Cleave('.input-phone', {
   phone: true,
@@ -12,14 +12,12 @@ const cleavePostal = new Cleave('.input-postal', {
   uppercase: true
 });
 
-$.validator.addMethod("valueMustEqual", function(value, element, arg){
-  return arg == value;
-}, "Value must equal arg.");
+$.validator.addMethod('valueMustEqual', (value, element, arg) => arg === value, 'Value must equal arg.');
 
 $('#spark-registration-form').validate({
   rules: {
     'contact[first_name]': {
-      required: true,
+      required: true
     },
     'contact[last_name]': {
       required: true
@@ -34,10 +32,10 @@ $('#spark-registration-form').validate({
     'answers[4388][answers]': {
       required: true
     },
-    'contact[date_of_birth]':{
+    'contact[date_of_birth]': {
       required: true
     },
-    'are_you_simulated': {
+    are_you_simulated: {
       valueMustEqual: ''
     },
     'answers[5184][answers]': {
@@ -45,18 +43,32 @@ $('#spark-registration-form').validate({
     }
   },
   errorPlacement: (error, element) => {
-    if (element.attr("name") === "answers[4388][answers]") {
-      element.parents('.form-group').append(error)
+    if (element.attr('name') === 'answers[4388][answers]') {
+      element.parents('.form-group').append(error);
     } else {
       error.insertAfter(element);
     }
   }
 });
 
+function hideRealtorDetails() {
+  $("select[name='answers[4389][answers]']").val('No');
+  $('#realtor-details').collapse('hide');
+  $('input[name="answers[5184][answers]"]').rules('remove', 'required');
+}
+
+function hideAgentDetails() {
+  $("select[name='agent']").val('false');
+  $('#agent-details').collapse('hide');
+  $('input[name="contact[postcode]"]').rules('add', {
+    required: true
+  });
+}
+
 function showRealtorDetails() {
   hideAgentDetails();
-  
-  $("#realtor-details").collapse("show");
+
+  $('#realtor-details').collapse('show');
   $('input[name="answers[5184][answers]"]').rules('add', {
     required: true
   });
@@ -65,27 +77,13 @@ function showRealtorDetails() {
 function showAgentDetails() {
   hideRealtorDetails();
 
-  $("#agent-details").collapse("show");
+  $('#agent-details').collapse('show');
   $('input[name="contact[postcode]"]').rules('remove');
 }
 
-function hideRealtorDetails() {
-  $("select[name='answers[4389][answers]']").val("No");
-  $("#realtor-details").collapse("hide");
-  $('input[name="answers[5184][answers]"]').rules('remove', 'required');
-}
-
-function hideAgentDetails() {
-  $("select[name='agent']").val("false");
-  $("#agent-details").collapse("hide");
-  $('input[name="contact[postcode]"]').rules('add', {
-    required: true
-  });
-}
-
 // handle 'are you working with a realtor?' question
-$("select[name='answers[4389][answers]']").on("change", (e) => {
-  if (e.currentTarget.value === "Yes") {
+$("select[name='answers[4389][answers]']").on('change', (e) => {
+  if (e.currentTarget.value === 'Yes') {
     showRealtorDetails();
   } else {
     hideRealtorDetails();
@@ -93,8 +91,8 @@ $("select[name='answers[4389][answers]']").on("change", (e) => {
 });
 
 // handle 'are you a realtor?' question
-$("select[name='agent']").on("change", (e) => {
-  if (e.currentTarget.value === "true") {
+$("select[name='agent']").on('change', (e) => {
+  if (e.currentTarget.value === 'true') {
     showAgentDetails();
   } else {
     hideAgentDetails();
@@ -110,8 +108,8 @@ $('.submit-btn').on('click', (e) => {
     const form = document.getElementById('spark-registration-form');
     const formData = new FormData(form);
 
-    const fetchUrl = "http://grid.thoughtshop.com/rc/assets/registration.php";
-    
+    const fetchUrl = 'http://grid.thoughtshop.com/rc/assets/registration.php';
+
     fetch(fetchUrl, {
       method: 'POST',
       body: JSON.stringify(Object.fromEntries(formData.entries())),
@@ -119,17 +117,15 @@ $('.submit-btn').on('click', (e) => {
         Accept: 'application/json',
         'Content-Type': 'application/json'
       }
-    }).then((response) => {
-      console.log('response', response);
-      if (!response.ok) throw Error(response.statusText);
-      return response.json();
     })
-    .then((data) => {
-      console.log(data);
-
-      if (data.success) {
-        document.location.href = $('input[name="redirect_success"]').val();
-      }
-    })
+      .then((response) => {
+        if (!response.ok) throw Error(response.statusText);
+        return response.json();
+      })
+      .then((data) => {
+        if (data.success) {
+          document.location.href = $('input[name="redirect_success"]').val();
+        }
+      });
   }
 });
