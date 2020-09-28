@@ -37,25 +37,26 @@
             </div>
           </div>
 
-            <div class="disclosure-check-item">
-              <input type="radio" class="disclosure-confirmation" id="dorts-confirmation" disabled />
-              <label class="" for="dorts-confirmation">I have received and read the Disclosure of Representation in Trading Services Form (required)</label>
           <form id="disclosure-form">
             <div class="disclosure-checks">
+              <div class="disclosure-check-item custom-control custom-radio">
+                <input name="dorts-confirmation" type="radio"
+                  class="disclosure-confirmation custom-control-input" id="dorts-confirmation" readonly required />
+                <label class="custom-control-label" for="dorts-confirmation">I have received and read the Disclosure of Representation in Trading Services Form (required)</label>
+              </div>
+  
+              <div class="disclosure-check-item custom-control custom-radio">
+                <input name="drup-confirmation" type="radio"
+                  class="disclosure-confirmation custom-control-input" id="drup-confirmation" readonly required />
+                <label class="custom-control-label" for="drup-confirmation">I have received and read the Disclosure of Risks to Unrepresented Parties Form (required)</label>
+              </div>
             </div>
-
-            <div class="disclosure-check-item">
-              <input type="radio" class="disclosure-confirmation" id="drup-confirmation" disabled />
-              <label class="" for="drup-confirmation">I have received and read the Disclosure of Risks to Unrepresented Parties Form (required)</label>
+  
+            <div class="form-group">
+              <label for="contact_email">Email Address</label>
+              <input class="form-control" id="contact_email" type="email"
+                name="contact[email]" placeholder="Your email address" required />
             </div>
-          </div>
-
-          <div class="form-group">
-            <label for="contact_email">Email Address</label>
-            <input class="form-control" id="contact_email"
-              type="text" name="contact[email]" placeholder="Your email address" />
-          </div>
-
   
             <button
               aria-label="Agree"
