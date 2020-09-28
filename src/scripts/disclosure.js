@@ -8,7 +8,6 @@ function enableRadioInput() {
   const radioInput = document.getElementById(`${this.id}-confirmation`);
 
   radioInput.disabled = false;
-  radioInput.classList.add('enabled');
 
   const tooltipSelector = `#${this.id} + .tooltip`;
 
@@ -17,7 +16,7 @@ function enableRadioInput() {
 
 function checkAgreeBtnState() {
   if (!(dorts.disabled) && !(drup.disabled) && dortsConfirm.checked && drupConfirm.checked) {
-    agreeBtn.classList.add('enabled');
+    agreeBtn.classList.remove('disabled');
   }
 }
 
