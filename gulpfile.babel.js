@@ -200,7 +200,7 @@ const watchFiles = () => {
     './src/scripts/**/*',
     './src/scripts/**/**/*'
   ], gulp.parallel(jsLint, js));
-  gulp.watch(['./src/registration.php', './src/images/*', './src/images/**/*'], copyAssets);
+  gulp.watch(['./src/*.php', './src/images/*', './src/images/**/*'], copyAssets);
 };
 
 export const lintAll = gulp.parallel(cssLintAll, jsLintAll);
