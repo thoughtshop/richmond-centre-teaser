@@ -173,7 +173,7 @@ export const copyAssets = (done) => {
     }))
     .pipe(gulp.dest(config.dest + '/assets/images'));
 
-  gulp.src(['./src/registration.php'])
+  gulp.src(['./src/*.php'])
     .pipe(gulp.dest(config.dest + '/assets'));
 
   gulp.src(['./src/documents/*'])
@@ -200,7 +200,7 @@ const watchFiles = () => {
     './src/scripts/**/*',
     './src/scripts/**/**/*'
   ], gulp.parallel(jsLint, js));
-  gulp.watch(['./src/registration.php', './src/images/*', './src/images/**/*'], copyAssets);
+  gulp.watch(['./src/*.php', './src/images/*', './src/images/**/*'], copyAssets);
 };
 
 export const lintAll = gulp.parallel(cssLintAll, jsLintAll);

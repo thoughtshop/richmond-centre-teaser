@@ -18,6 +18,7 @@ let config = {
       path.resolve(__dirname, 'src/scripts/vendor')
     ],
     disclosure: [
+      'jquery-validation',
       path.resolve(__dirname, 'src/scripts/disclosure')
     ]
   },
