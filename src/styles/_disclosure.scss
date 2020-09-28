@@ -28,7 +28,6 @@
     margin-top: 2rem;
     font-weight: bold;
     font-size: 1.2rem;
-    
 
     &::after {
       display: block;
@@ -39,6 +38,18 @@
       background-color: $white;
 
       content: "";
+    }
+  }
+
+  label {
+
+    &.error {
+      color: darken($brand-primary, 30%);
+      font-weight: bold;
+      font-size: 0.8rem;
+      font-family: $font-family;
+      letter-spacing: 0.1rem;
+      text-transform: uppercase;
     }
   }
 
@@ -94,39 +105,52 @@
   margin-bottom: 2rem;
 }
 
+
 .disclosure-check-item {
-  display: flex;
   margin-bottom: 1rem;
 
   label {
-    margin-left: 0.75rem;
+    // margin-left: 0.75rem;
     font-size: 0.9rem;
+
+    &.error {
+      display: block;
+    }
   }
 }
 
-.disclosure-confirmation {
-  min-width: 15px;
-  height: 15px;
+.custom-control {
+  padding-left: 2rem;
+}
 
-  background-color: $red;
-  border: 1px solid $white;
-  border-radius: 50%;
-  outline: none;
+.custom-control-label {
 
-  transition: background-color 300ms ease;
+  &::before {
+    top: 0;
+    left: -2rem;
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
 
-  &:disabled {
-    cursor: no-drop;
+    background-color: transparent;
+    border-color: $white;
   }
 
-  &:checked {
+  &::after {
+    top: 0;
+    left: -2rem;
+
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.custom-radio {
+
+  .custom-control-input:checked ~ .custom-control-label::after {
     background-color: $white;
+    background-image: none;
+    border-radius: 50%;
   }
 }
 
