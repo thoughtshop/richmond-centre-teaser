@@ -1,27 +1,27 @@
-let dorts = document.querySelector('#dorts'),
-    drup = document.querySelector('#drup'),
-    dortsConfirm = document.querySelector('#dorts-confirmation'),
-    drupConfirm = document.querySelector('#drup-confirmation'),
-    agreeBtn = document.querySelector('#agree-btn');
+const dorts = document.querySelector('#dorts');
+const drup = document.querySelector('#drup');
+const dortsConfirm = document.querySelector('#dorts-confirmation');
+const drupConfirm = document.querySelector('#drup-confirmation');
+const agreeBtn = document.querySelector('#agree-btn');
 
 function enableRadioInput() {
-  let radioInput = document.getElementById(this.id + '-confirmation')
+  const radioInput = document.getElementById(`${this.id}-confirmation`);
 
-  radioInput.disabled = false
-  radioInput.classList.add('enabled')
+  radioInput.disabled = false;
+  radioInput.classList.add('enabled');
 
-  let tooltipSelector = '#' + this.id + ' + .tooltip'
+  const tooltipSelector = `#${this.id} + .tooltip`;
 
-  document.querySelector(tooltipSelector).classList.add('hidden')
+  document.querySelector(tooltipSelector).classList.add('hidden');
 }
 
 function checkAgreeBtnState() {
-  if (!(dorts.disabled) && !(drup.disabled) && dortsConfirm.checked === true && drupConfirm.checked === true) {
-    agreeBtn.classList.add('enabled')
+  if (!(dorts.disabled) && !(drup.disabled) && dortsConfirm.checked && drupConfirm.checked) {
+    agreeBtn.classList.add('enabled');
   }
 }
 
-dorts.addEventListener('click', enableRadioInput)
-drup.addEventListener('click', enableRadioInput)
-dortsConfirm.addEventListener('change', checkAgreeBtnState)
-drupConfirm.addEventListener('change', checkAgreeBtnState)
+dorts.addEventListener('click', enableRadioInput);
+drup.addEventListener('click', enableRadioInput);
+dortsConfirm.addEventListener('change', checkAgreeBtnState);
+drupConfirm.addEventListener('change', checkAgreeBtnState);
