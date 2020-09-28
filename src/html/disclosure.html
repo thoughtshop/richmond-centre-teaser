@@ -21,38 +21,48 @@
       <div class="container">
         <div class="disclosure-inner">
           <h1>Disclosure Requirements</h1>
-
           <h2>To book your appointment, please read and review the following disclosures from the Real Estate Council of BC</h2>
           <p>These disclosure forms are designed with you, the consumer, in mind — presenting information clearly and in plain language, to help you make informed choices. These forms will help explain the special legal duties that real estate professionals owe to their clients as well as the risks of being an unrepresented party in a real estate transaction, and we invite you to contact us with any questions you may have in respect to these forms.</p>
           <p>In order to proceed with booking your appointment, please review the disclaimer forms below.</p>
 
+          <div class="disclosure-links">
+            <div class="disclosure-link">
+              <a id="dorts" href="./assets/documents/DORTS-Signed.pdf" target="_blank">Disclosure of Trading Representation in Trading Services</a>
+              <span class="tooltip"> -&nbsp;Review in order to proceed</span>
+            </div>
+
+            <div class="disclosure-link">
+              <a id="drup" href="./assets/documents/DRUP-Signed.pdf" target="_blank">Disclosure of Risks to Unrepresented Parties</a>
+              <span class="tooltip"> -&nbsp;Review in order to proceed</span>
+            </div>
+          </div>
+
           <div class="disclosure-checks">
-            <div class="disclosure-item">
-              <span class="disclosure-link">
-                <a id="dorts" href="./assets/documents/DORTS-Signed.pdf" target="_blank">Disclosure of Trading Representation in Trading Services</a>
-                <span class="tooltip"> -&nbsp;Review in order to proceed</span>
-              </span>
-            </div>
-
-            <div class="disclosure-item">
-              <span class="disclosure-link">
-                <a id="drup" href="./assets/documents/DRUP-Signed.pdf" target="_blank">Disclosure of Risks to Unrepresented Parties</a>
-                <span class="tooltip"> -&nbsp;Review in order to proceed</span>
-              </span>
-            </div>
-
-            <div class="disclosure-item">
+            <div class="disclosure-check-item">
               <input type="radio" class="disclosure-confirmation" id="dorts-confirmation" disabled />
               <label class="" for="dorts-confirmation">I have received and read the Disclosure of Representation in Trading Services Form (required)</label>
             </div>
 
-            <div class="disclosure-item">
+            <div class="disclosure-check-item">
               <input type="radio" class="disclosure-confirmation" id="drup-confirmation" disabled />
               <label class="" for="drup-confirmation">I have received and read the Disclosure of Risks to Unrepresented Parties Form (required)</label>
             </div>
-
-            <a aria-label="Agree" href="https://app.acuityscheduling.com/schedule.php?owner=18897016&appointmentType=16952235" target="_noreferrer" id="agree-btn" class="btn btn-primary agree-btn">Agree</a>
           </div>
+
+          <div class="form-group">
+            <label for="contact_email">Email Address</label>
+            <input class="form-control" id="contact_email"
+              type="text" name="contact[email]" placeholder="Your email address" />
+          </div>
+
+          <a 
+            aria-label="Agree"
+            class="btn btn-primary agree-btn"
+            href="https://app.acuityscheduling.com/schedule.php?owner=18897016&appointmentType=16952235" 
+            id="agree-btn"
+            target="_noreferrer" 
+          >Agree</a>
+
         </div>
       </div>
     </main>
