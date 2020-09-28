@@ -4,7 +4,7 @@ const ModernizrWebpackPlugin = require("modernizr-webpack-plugin");
 
 let config = {
   mode: "development",
-  
+
   entry: {
     app: [
       'bootstrap/js/src/collapse',
@@ -13,8 +13,11 @@ let config = {
     ],
     vendor: [
       'lazysizes',
-      'picturefill', 
+      'picturefill',
       path.resolve(__dirname, 'src/scripts/vendor')
+    ],
+    disclosure: [
+      path.resolve(__dirname, 'src/scripts/disclosure')
     ]
   },
 
