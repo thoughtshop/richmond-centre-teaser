@@ -1,22 +1,23 @@
-import gulp from 'gulp'
-import minimist from 'minimist'
-import autoprefixer from 'gulp-autoprefixer'
-import changedInPlace from 'gulp-changed-in-place'
-import cleanCSS from 'gulp-clean-css'
-import del from 'del'
-import eslint from 'gulp-eslint'
-import stylelint from 'gulp-stylelint'
-import gulpConnect from 'gulp-connect'
-import htmlmin from 'gulp-htmlmin'
-import imageMin from 'gulp-imagemin'
-import fileinclude from 'gulp-file-include'
-import ifElse from 'gulp-if-else'
-import notify from 'gulp-notify'
-import sass from 'gulp-sass'
-import webpack from 'webpack'
-import webpackStream from 'webpack-stream'
+import gulp from 'gulp';
+import minimist from 'minimist';
+import autoprefixer from 'gulp-autoprefixer';
+import changedInPlace from 'gulp-changed-in-place';
+import cleanCSS from 'gulp-clean-css';
+import del from 'del';
+import eslint from 'gulp-eslint';
+import stylelint from 'gulp-stylelint';
+import gulpConnect from 'gulp-connect';
+import htmlmin from 'gulp-htmlmin';
+import imageMin from 'gulp-imagemin';
+import fileinclude from 'gulp-file-include';
+import ifElse from 'gulp-if-else';
+import notify from 'gulp-notify';
+import rename from 'gulp-rename';
+import sass from 'gulp-sass';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2));
 
 const config = {
   dest: argv.production ? './dist' : './build',
@@ -24,9 +25,9 @@ const config = {
   webpackConfig: argv.production ? require("./webpack.prod.config.js") : require("./webpack.config.js")
 };
 
-export const clean = () => {
-  return del([config.dest]);
-};
+export const clean = () => (
+  del([config.dest])
+);
 
 export const js = () => {
   return webpackStream(config.webpackConfig, webpack)
