@@ -20,8 +20,8 @@
   }
 
   li {
-    page-break-inside: avoid;
     margin-bottom: 2rem;
+    page-break-inside: avoid;
   }
 
   hr {
@@ -31,23 +31,26 @@
 }
 
 .page-header {
-  text-align: right;
   padding-top: 6rem;
+  text-align: right;
 }
 
 .page-header__logo {
 
   &.rc-logo {
-    background-color: $bronze-dark;
-    fill: $white;
-
     width: 120px;
     height: 120px;
+
+    background-color: $bronze-dark;
+
+    fill: $white;
   }
 }
 
 @include media-breakpoint-up(md) {
+
   .privacy-policy {
+
     .columns {
       column-count: 2;
       column-gap: 4rem;
