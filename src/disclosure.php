@@ -11,9 +11,22 @@ if (isset($_POST)) {
     "success" => false
   );
 
+  $date = date('Y-m-d');
+
   $newContact = array(
     'contact' => array(
-      'email' => $_POST['contact[email]']
+      'email' => $_POST['contact[email]'],
+      'registration_source_assignment_attributes' => array(
+        'name' => 'RECBC Form'
+      ),
+      'answer_attributes' => array(
+        '7406' => array(
+          'answers' => array($date)
+        ),
+        '7407' => array(
+          'answers' => array($date)
+        )
+      )
     )
   );
 
