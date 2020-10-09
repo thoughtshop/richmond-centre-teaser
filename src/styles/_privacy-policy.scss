@@ -1,0 +1,58 @@
+.privacy-policy {
+  background-color: $brand-secondary;
+  color: $black;
+
+  main {
+    top: 0;
+  }
+
+  h2 {
+    margin-top: 4rem;
+  }
+
+  h3 {
+    margin-top: 4rem;
+    margin-bottom: 1.75rem;
+  }
+
+  ul {
+    margin-top: 2rem;
+  }
+
+  li {
+    page-break-inside: avoid;
+    margin-bottom: 2rem;
+  }
+
+  hr {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.page-header {
+  text-align: right;
+  padding-top: 6rem;
+}
+
+.page-header__logo {
+
+  &.rc-logo {
+    background-color: $bronze-dark;
+    fill: $white;
+
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .privacy-policy {
+    .columns {
+      column-count: 2;
+      column-gap: 4rem;
+    }
+
+    
+  }
+}
