@@ -44,7 +44,7 @@ $('#disclosure-form').validate({
     'contact[email]': {
       required: true,
       email: true
-    },
+    }
   },
   errorPlacement: (error, element) => {
     if (element.attr('type') === 'radio') {
