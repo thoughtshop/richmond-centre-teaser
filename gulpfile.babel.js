@@ -86,12 +86,6 @@ export const css = () => {
       config.production,
       () => cleanCSS()
     ))
-    .pipe(ifElse(
-      config.production,
-      () => rename((path) => {
-        path.basename += ".min"
-      })
-    ))
     .pipe(gulp.dest(config.dest + '/assets'))
     .pipe(gulpConnect.reload());
 };
