@@ -45,7 +45,7 @@
     "gulp-webpack": "^1.5.0",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.4.0",
-    "jquery-validation": "^1.17.0",
+    "jquery-validation": "^1.19.3",
     "lazysizes": "^5.2.0-beta1",
     "lodash": "^4.17.11",
     "minimist": "^1.2.0",
